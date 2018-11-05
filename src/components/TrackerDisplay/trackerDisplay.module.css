@@ -1,0 +1,64 @@
+.account_info_display{
+  margin: 5rem auto;
+  width : 1000px;
+}
+
+.incomes_expenses{
+  display : flex;
+  flex-wrap: wrap;
+}
+
+.incomes, .expenses{
+  padding : 0.5rem;
+  border : 1px var(--dark-grey) solid;
+  background-color :#f4f7dc;
+  flex: 1;
+}
+
+.title{
+  text-align: center;
+  font-family: var(--font-content);
+  font-size : 30px;
+  color: var(--light-yellow);
+  background-color : var(--dark-grey);
+  padding : 1rem 0.5rem;
+}
+
+.income_display, .expense_display{
+  font-size : 20px;
+  padding : 1rem auto;
+  border : 1px grey solid;
+  display : flex;
+  flex-direction : column;
+  font-family: var(--font-content);
+}
+
+.income_display li, .expense_display li{
+  list-style-type: none;
+  display: flex;
+  padding : 1rem;
+  font-size : 20px;
+}
+
+.income_display li .desc_span, .expense_display li .desc_span{
+  flex : 2;
+}
+
+.income_display li .amount_span, .expense_display li .amount_span{
+  flex : 1;
+}
+
+.income_display li .date_span, .expense_display li .date_span{
+  flex : 1.5;
+  font-size : 15px;
+  margin-left : 3rem;
+}
+
+.balance_display{
+  text-align: center;
+  font-family: var(--font-content);
+  padding : 2rem auto; 
+  font-size : 30px;
+  color: var(--orange);
+  margin-top : 2rem;
+}
