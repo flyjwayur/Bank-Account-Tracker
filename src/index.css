@@ -8,3 +8,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/******* Global CSS variable *******/
+
+:root {
+  /* font */
+  --font-title : 'Montserrat', sans-serif;
+  --font-content : 'Roboto Condensed', sans-serif;
+  /* color*/
+  --light-yellow : #f4f7dc;
+  --super-dark-cyan : #003f3f;
+  --dark-cyan : #008b8b;
+  --middle-cyan : #00bebe;
+  --middle-light-cyan : #d2ffff;
+  --light-cyan : #d1ffff;
+  --super-dark-grey : #18191b;
+  --dark-grey : #51565d;
+  --middle-grey: #757c86;
+  --orange : #ffa500;
+  --orange-red : #ff4500;
+  --gold : #ffd700;
+  --light-slate-gray : #778899;
+  --white : #ffffff;
+}

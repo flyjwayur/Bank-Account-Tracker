@@ -1,0 +1,31 @@
+.input_field{
+  font-size : 20px;
+  font-family : var(--font-title);
+  margin : 2rem auto;
+  color : var(--orange);
+  font-weight: 700;
+  text-align: center;
+}
+
+.input_type, .description_input, .amount_input{
+  font-size : 20px;
+  outline : none;
+  margin : 1rem;
+}
+
+.add_info_btn{
+  padding: 0.5rem 1.5rem;
+  background-color : var(--dark-cyan);
+  color : white;
+  font-size : 20px;
+  outline : none;
+  border-radius : 10%;
+}
+
+.add_info_btn:focus{
+  padding: 0.5rem 1.5rem;
+  background-color : var(--orange);
+  font-size : 20px;
+  outline : none;
+  border-radius : 10%;
+}
