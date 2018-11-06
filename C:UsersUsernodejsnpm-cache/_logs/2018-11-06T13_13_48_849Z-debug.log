@@ -1,0 +1,15 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'start' ]
+2 info using npm@6.2.0
+3 info using node@v10.9.0
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle react-account-tracker@0.1.0~prestart: react-account-tracker@0.1.0
+6 info lifecycle react-account-tracker@0.1.0~start: react-account-tracker@0.1.0
+7 verbose lifecycle react-account-tracker@0.1.0~start: unsafe-perm in lifecycle true
+8 verbose lifecycle react-account-tracker@0.1.0~start: PATH: /usr/local/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/hyesoopark/Desktop/Integrify/REACT/react-account-tracker/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/smlnj/bin:/usr/local/smlnj/bin:/usr/local/bin
+9 verbose lifecycle react-account-tracker@0.1.0~start: CWD: /Users/hyesoopark/Desktop/Integrify/REACT/react-account-tracker
+10 silly lifecycle react-account-tracker@0.1.0~start: Args: [ '-c', 'react-scripts start' ]
+11 timing npm Completed in 13731526ms
+12 error cb() never called!
+13 error This is an error with npm itself. Please report this error at:
+14 error <https://npm.community>

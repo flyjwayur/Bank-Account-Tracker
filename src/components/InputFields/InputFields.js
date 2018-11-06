@@ -32,7 +32,7 @@ const InputFields = props => {
         className={classes.amount_input}
         placeholder="ex)500"
         onChange={handleInput}
-        value={amount}
+        value= {amount}
         required
       />
       <button className={classes.add_info_btn}>Add</button>
@@ -42,7 +42,7 @@ const InputFields = props => {
 
 InputFields.propTypes = {
   description: PropTypes.string.isRequired,
-  amount: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
   inputType: PropTypes.string.isRequired
 };
 

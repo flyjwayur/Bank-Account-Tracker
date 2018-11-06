@@ -7,7 +7,7 @@ export const userIdGenerator = () =>{
     "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let lengthOfnumLet = lettersNumbers.length;
 
-  for (var i = 0; i < 7; i++) {
+  for (var i = 0; i < 3; i++) {
     userId += lettersNumbers[Math.floor(Math.random() * lengthOfnumLet)];
   }
   return userId;

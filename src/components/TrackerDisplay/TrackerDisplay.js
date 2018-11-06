@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classes from "./trackerDisplay.module.css";
-import { userIdGenerator } from "../../library/methods";
 
 const TrackerDisplay = props => {
-  let { expensesList, incomesList } = props;
+  let { expensesList, incomesList, handleDeleteItem} = props;
 
   const displayIncomesList =
     incomesList !== []
@@ -17,6 +16,7 @@ const TrackerDisplay = props => {
               </span>
               <span className={classes.amount_span}>{amount}</span>
               <span className={classes.date_span}>{date}</span>
+              <button onClick={(e) => {handleDeleteItem(e,"incomesList", income)}}>Delete</button>
             </li>
           );
         })
@@ -33,6 +33,7 @@ const TrackerDisplay = props => {
               </span>
               <span className={classes.amount_span}>{amount}</span>
               <span className={classes.date_span}>{date}</span>
+              <button onClick={(e) => {handleDeleteItem(e, "expensesList", expense)}}>Delete</button>
             </li>
           );
         })

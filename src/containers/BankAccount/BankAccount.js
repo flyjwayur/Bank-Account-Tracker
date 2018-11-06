@@ -3,7 +3,7 @@ import Aux from "../../hoc/Aux";
 import InputFields from "../../components/InputFields/InputFields";
 import TrackerDisplay from "../../components/TrackerDisplay/TrackerDisplay";
 import OverView from "../../components/OverView/OverView";
-import { displayDateTime } from "../../library/methods";
+import { userIdGenerator, displayDateTime } from "../../library/methods";
 
 class BankAccount extends Component {
   state = {
@@ -21,21 +21,24 @@ class BankAccount extends Component {
   handleInput = e => {
     console.log("type", e.target.type);
     console.log("name", e.target.name);
-    if (e.target.type === "text") {
-      this.setState({
-        [e.target.name]: e.target.value
-      });
-    }
-    if(e.target.name === "amount"){
-      this.setState({
-        amount: parseInt(e.target.value)
-      });
-    }
     if (e.target.type === "select-one") {
       this.setState({
         inputType: e.target.value
       });
     }
+
+    if (e.target.type === "text") {
+      this.setState({
+        [e.target.name]: e.target.value
+      });
+    }
+
+    if(e.target.name === "amount"){
+      this.setState({
+        amount: parseFloat(e.target.value)
+      });
+    }
+    
     console.log("type?", e.target.value);
   };
 
@@ -43,9 +46,10 @@ class BankAccount extends Component {
     let date = displayDateTime();
     const description = this.state.description;
     const amount = parseInt(this.state.amount);
+    const id = userIdGenerator();
     if (this.state.inputType === "income") {
       const incomesList = this.state.incomesList;
-      incomesList.push({ description, amount, date });
+      incomesList.push({ id, description, amount, date });
       this.setState({
         incomesList
       });
@@ -57,7 +61,7 @@ class BankAccount extends Component {
     }
     if (this.state.inputType === "expense") {
       const expensesList = this.state.expensesList;
-      expensesList.push({ description, amount, date });
+      expensesList.push({ id, description, amount, date });
       this.setState({
         expensesList
       });
@@ -76,12 +80,39 @@ class BankAccount extends Component {
     this.addItems();
   };
 
+  handleDeleteItem = (e, arrName, item) => {
+     console.log(arrName);
+    if(arrName === "incomesList"){
+      console.log("selected item.id", item.id);
+      const newDataList = this.state.incomesList.filter(i => 
+        i.id !== item.id
+        );
+      this.setState({ "incomesList" : newDataList});
+      localStorage.setItem(
+        "incomesList",
+        JSON.stringify(newDataList, undefined, 4)
+      );
+      console.log("after delete", newDataList);
+    }else if(arrName === "expensesList"){
+      console.log("selected item.id", item.id);
+      const newDataList = this.state.expensesList.filter(i => 
+        i.id !== item.id
+        );
+      this.setState({ "expensesList" : newDataList});
+      localStorage.setItem(
+        "expensesList",
+        JSON.stringify(newDataList, undefined, 4)
+      );
+      console.log("after delete", newDataList);
+    }
+  }
+
   componentDidUpdate = () => {
     // console.log("description", this.state.description);
     // console.log("amount", this.state.amount);
     // console.log("inputType", this.state.inputType);
-    console.log("add Income", this.state.incomesList);
-    console.log("add expense", this.state.expensesList);
+    //console.log("add Income", this.state.incomesList);
+    //console.log("add expense", this.state.expensesList);
   };
 
   render() {
@@ -105,6 +136,7 @@ class BankAccount extends Component {
         <TrackerDisplay
           expensesList={this.state.expensesList}
           incomesList={this.state.incomesList}
+          handleDeleteItem={(e, arr, item) => (this.handleDeleteItem(e, arr, item))}
         />
       </Aux>
     );
