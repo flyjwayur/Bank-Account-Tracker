@@ -30,7 +30,7 @@ const InputFields = props => {
         id="amount"
         name="amount"
         className={classes.amount_input}
-        placeholder="ex)500"
+        placeholder="ex)500.00"
         onChange={handleInput}
         value= {amount}
         required
@@ -42,7 +42,7 @@ const InputFields = props => {
 
 InputFields.propTypes = {
   description: PropTypes.string.isRequired,
-  amount: PropTypes.number.isRequired,
+  amount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   inputType: PropTypes.string.isRequired
 };
 

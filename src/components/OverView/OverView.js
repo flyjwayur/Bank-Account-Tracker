@@ -4,15 +4,16 @@ import Aux from "../../hoc/Aux"
 
 const OverView = props => {
   let { expensesList, incomesList, totalIncome, totalexpense } = props;
+ 
   const calTotalIncome = () => {
     return incomesList.reduce((acc, curr) => {
-      return acc + curr.amount;
+      return acc + parseFloat(curr.amount);
     }, 0);
   }
 
   const calTotalExpense = () => {
     return expensesList.reduce((acc, curr) => {
-      return acc + curr.amount;
+      return acc + parseFloat(curr.amount);
     }, 0);
   }
 
@@ -24,9 +25,10 @@ const OverView = props => {
   console.log(expensesList, incomesList);
   return (
     <Aux>
-      <div>Total Income : {calTotalIncome()}</div>
-      <div>Total Expense : {calTotalExpense()}</div>
-      <div>Total balance : {calAccountBalance()}</div> 
+      <div>OverView</div>
+      <div>Total balance : {calAccountBalance()} {'\u20AC'}</div> 
+      <div>Total Income : {calTotalIncome()} {'\u20AC'}</div>
+      <div>Total Expense : {calTotalExpense()} {'\u20AC'}</div>
     </Aux>
   );
 };

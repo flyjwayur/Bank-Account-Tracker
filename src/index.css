@@ -16,6 +16,17 @@ code {
   --font-title : 'Montserrat', sans-serif;
   --font-content : 'Roboto Condensed', sans-serif;
   /* color*/
+  --dark-grey : #6e6e70;
+  --middle-grey : #94949c;
+  --light-grey : #ededed;
+  --near-white : #f8f9f9;
+  --dark-blue : #325a76;
+  --blue : #5497c5;
+  --dark-pink : #bc635d;
+  --bright-pink : #fe7069;
+  --light-pink : #fd897f;
+
+
   --light-yellow : #f4f7dc;
   --super-dark-cyan : #003f3f;
   --dark-cyan : #008b8b;

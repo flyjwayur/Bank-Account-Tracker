@@ -1,17 +1,17 @@
-.account_info_display{
-  margin: 5rem auto;
-  width : 1000px;
-}
-
 .incomes_expenses{
+  margin: 5rem auto;
+  width : 80%;
   display : flex;
   flex-wrap: wrap;
+  box-shadow : 1px 2px 4px var(--middle-grey);
+  background-color : var(--light-yellow);
+  border-radius: 10px;
 }
 
 .incomes, .expenses{
   padding : 0.5rem;
-  border : 1px var(--dark-grey) solid;
-  background-color :#f4f7dc;
+  border : 1px var(--light-grey) solid;
+  border-radius: 10px;
   flex: 1;
 }
 
@@ -22,12 +22,32 @@
   color: var(--light-yellow);
   background-color : var(--dark-grey);
   padding : 1rem 0.5rem;
+  border-radius: 10px 10px 0px 0px;
 }
 
-.income_display, .expense_display{
+.incomesTitle{
+  background-color : var(--blue);
+}
+
+.expensesTitle{
+  background-color : var(--light-pink);
+}
+
+.income_display{
+  padding-top : 2rem;
   font-size : 20px;
   padding : 1rem auto;
-  border : 1px grey solid;
+  border : 1px var(--middle-grey) solid;
+  display : flex;
+  flex-direction : column;
+  font-family: var(--font-content);
+}
+
+.expense_display{
+  padding-top : 2rem;
+  font-size : 20px;
+  padding : 1rem auto;
+  border : 1px var(--middle-grey) solid;
   display : flex;
   flex-direction : column;
   font-family: var(--font-content);
@@ -44,8 +64,14 @@
   flex : 2;
 }
 
-.income_display li .amount_span, .expense_display li .amount_span{
-  flex : 1;
+.income_display li .amount_span{
+  flex : 1.7;
+  color: var(--dark-blue);
+}
+
+.expense_display li .amount_span{
+  flex : 1.7;
+  color: var(--dark-pink);
 }
 
 .income_display li .date_span, .expense_display li .date_span{
@@ -61,4 +87,24 @@
   font-size : 30px;
   color: var(--orange);
   margin-top : 2rem;
+}
+
+.deleteBtn{
+  padding: 0.7rem;
+  border-radius: 50%;
+  flex : 0.2;
+  margin : auto 1rem;
+}
+
+.income_deleteBtn{ 
+  background-color : var(--dark-blue);
+}
+
+.expense_deleteBtn{
+  background-color: var(--dark-pink);
+}
+
+.deleteFontIcon{
+  color : var(--light-grey);
+  font-size : 0.8rem;
 }

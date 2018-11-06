@@ -4,6 +4,8 @@ import InputFields from "../../components/InputFields/InputFields";
 import TrackerDisplay from "../../components/TrackerDisplay/TrackerDisplay";
 import OverView from "../../components/OverView/OverView";
 import { userIdGenerator, displayDateTime } from "../../library/methods";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+
 
 class BankAccount extends Component {
   state = {
@@ -45,7 +47,7 @@ class BankAccount extends Component {
   addItems = () => {
     let date = displayDateTime();
     const description = this.state.description;
-    const amount = parseInt(this.state.amount);
+    const amount = parseFloat(this.state.amount).toFixed(2);
     const id = userIdGenerator();
     if (this.state.inputType === "income") {
       const incomesList = this.state.incomesList;
@@ -75,7 +77,7 @@ class BankAccount extends Component {
 
   handleInputSubmit = e => {
     e.preventDefault();
-    alert("hei " + this.state.inputType + parseInt(this.state.amount));
+    alert("hei " + this.state.inputType + parseFloat(this.state.amount).toFixed(2));
     //Add income or expense according to input type
     this.addItems();
   };
@@ -137,6 +139,7 @@ class BankAccount extends Component {
           expensesList={this.state.expensesList}
           incomesList={this.state.incomesList}
           handleDeleteItem={(e, arr, item) => (this.handleDeleteItem(e, arr, item))}
+          icon={faTrash}
         />
       </Aux>
     );

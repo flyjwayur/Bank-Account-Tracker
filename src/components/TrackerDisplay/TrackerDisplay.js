@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classes from "./trackerDisplay.module.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const TrackerDisplay = props => {
-  let { expensesList, incomesList, handleDeleteItem} = props;
+  let { expensesList, incomesList, handleDeleteItem, icon} = props;
 
   const displayIncomesList =
     incomesList !== []
@@ -14,9 +15,9 @@ const TrackerDisplay = props => {
               <span className={classes.desc_span}>
                 {description.toUpperCase()}
               </span>
-              <span className={classes.amount_span}>{amount}</span>
+              <span className={classes.amount_span}>{amount} </span>
               <span className={classes.date_span}>{date}</span>
-              <button onClick={(e) => {handleDeleteItem(e,"incomesList", income)}}>Delete</button>
+              <button className={[classes.deleteBtn, classes.income_deleteBtn].join(' ')} onClick={(e) => {handleDeleteItem(e,"incomesList", income)}}><FontAwesomeIcon className={classes.deleteFontIcon} icon={icon}/></button>
             </li>
           );
         })
@@ -31,28 +32,25 @@ const TrackerDisplay = props => {
               <span className={classes.desc_span}>
                 {description.toUpperCase()}
               </span>
-              <span className={classes.amount_span}>{amount}</span>
+              <span className={classes.amount_span}> - {amount} {'\u20AC'}</span>
               <span className={classes.date_span}>{date}</span>
-              <button onClick={(e) => {handleDeleteItem(e, "expensesList", expense)}}>Delete</button>
+              <button className={[classes.deleteBtn, classes.expense_deleteBtn].join(' ')} onClick={(e) => {handleDeleteItem(e, "expensesList", expense)}}><FontAwesomeIcon className={classes.deleteFontIcon} icon={icon}/></button>
             </li>
           );
         })
       : null;
 
   return (
-    <div className={classes.account_info_display}>
       <div className={classes.incomes_expenses}>
         <div className={classes.incomes}>
-          <p className={classes.title}>Income</p>
+          <p className={[classes.title, classes.incomesTitle].join(' ')}>Income</p>
           <ul className={classes.income_display}>{displayIncomesList}</ul>
         </div>
         <div className={classes.expenses}>
-          <p className={classes.title}>Expense</p>
+          <p className={[classes.title, classes.expensesTitle].join(' ')}>Expense</p>
           <ul className={classes.expense_display}>{displayExpensesList}</ul>
         </div>
       </div>
-      <div className={classes.balance_display} />
-    </div>
   );
 };
 
