@@ -13,6 +13,10 @@
   margin : 1rem;
 }
 
+.amount_input:focus::placeholder{
+  color :transparent;
+}
+
 .add_info_btn{
   padding: 0.5rem 1.5rem;
   background-color : var(--dark-cyan);

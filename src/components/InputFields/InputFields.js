@@ -26,7 +26,7 @@ const InputFields = props => {
       />
       <label htmlFor="amount">Amount</label>
       <input
-        type="text"
+        type="number"
         id="amount"
         name="amount"
         className={classes.amount_input}
@@ -42,7 +42,7 @@ const InputFields = props => {
 
 InputFields.propTypes = {
   description: PropTypes.string.isRequired,
-  amount: PropTypes.number.isRequired,
+  amount: PropTypes.string.isRequired,
   inputType: PropTypes.string.isRequired
 };
 
