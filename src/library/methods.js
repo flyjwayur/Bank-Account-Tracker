@@ -1,7 +1,7 @@
 // ID generator -
 // With execution time test, userIdGenerator fn is a little bit faster than generateUUID
 
-export const userIdGenerator = () =>{
+export const userIdGenerator = () => {
   let userId = "";
   const lettersNumbers =
     "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -11,8 +11,7 @@ export const userIdGenerator = () =>{
     userId += lettersNumbers[Math.floor(Math.random() * lengthOfnumLet)];
   }
   return userId;
-}
-
+};
 
 // Get the current time and display the time
 export const displayDateTime = () => {
@@ -35,4 +34,13 @@ export const displayDateTime = () => {
     minutes = "0" + minutes;
   }
   return `${day}/${month}/${year} ${hours}:${minutes}`;
-}
+};
+
+export const displayMonth = () => {
+  let now = new Date();
+  let month = now.toDateString();
+  if (month < 10) {
+    month = "0" + month;
+  }
+  return `${month}`;
+};

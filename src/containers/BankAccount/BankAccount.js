@@ -3,7 +3,7 @@ import Aux from "../../hoc/Aux";
 import InputFields from "../../components/InputFields/InputFields";
 import TrackerDisplay from "../../components/TrackerDisplay/TrackerDisplay";
 import OverView from "../../components/OverView/OverView";
-import { userIdGenerator, displayDateTime } from "../../library/methods";
+import { userIdGenerator, displayDateTime} from "../../library/methods";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -13,11 +13,10 @@ class BankAccount extends Component {
     amount: "",
     expensesList: JSON.parse(localStorage.getItem("expensesList")) || [],
     incomesList: JSON.parse(localStorage.getItem("incomesList")) || [],
-    totalIncome: 0,
-    totalexpense: 0,
     inputType: "income",
     income: "income",
-    expense: "expense"
+    expense: "expense",
+    month: ""
   };
 
   handleInput = e => {
@@ -125,6 +124,7 @@ class BankAccount extends Component {
           incomesList={this.state.incomesList}
           totalIncome={this.state.totalIncome}
           totalexpense={this.state.totalexpense}
+          month={this.state.month}
         />
         <InputFields
           description={this.state.description}

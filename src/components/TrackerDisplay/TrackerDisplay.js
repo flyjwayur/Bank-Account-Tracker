@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classes from "./trackerDisplay.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -15,7 +14,7 @@ const TrackerDisplay = props => {
               <span className={classes.desc_span}>
                 {description.toUpperCase()}
               </span>
-              <span className={classes.amount_span}>{amount} </span>
+              <span className={classes.amount_span}>{amount} {'\u20AC'} </span>
               <span className={classes.date_span}>{date}</span>
               <button className={[classes.deleteBtn, classes.income_deleteBtn].join(' ')} onClick={(e) => {handleDeleteItem(e,"incomesList", income)}}><FontAwesomeIcon className={classes.deleteFontIcon} icon={icon}/></button>
             </li>
@@ -53,7 +52,5 @@ const TrackerDisplay = props => {
       </div>
   );
 };
-
-TrackerDisplay.propTypes = {};
 
 export default TrackerDisplay;

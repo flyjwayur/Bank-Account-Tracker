@@ -1,0 +1,48 @@
+.overViewTitle{
+  font-size : 5rem;
+  margin: 2rem;
+  color: var(--darker-grey);
+}
+
+.todayIs{
+  margin: 1rem auto;
+  font-size : 1.2rem;
+  font-family : var(--font-content);
+  color: var(--dark-blue);
+}
+
+.overViewWrapper{
+  margin: auto;
+  border: 2px var(--middle-grey) solid;
+  box-shadow : 1px 2px 4px var(--middle-grey);
+  border-radius : 10px;
+  font-size : 1rem;
+  width : 50%;
+  font-family : var(--font-content);
+  display: flex;
+  align-items: center;
+  padding: auto 2rem;
+  color: var(--dark-grey);
+}
+
+.overViewContent{
+  padding: 1rem;
+  font-size: 1.2rem;
+  flex : 1;
+}
+
+.minusBalance{
+  color: var(--light-pink)
+}
+
+.plusBalance{
+  color: var(--blue);
+}
+
+.hightlightIncome{
+  color: var(--dark-blue);
+}
+
+.hightlightExpense{
+  color: var(--dark-blue);
+}

@@ -16,6 +16,7 @@ code {
   --font-title : 'Montserrat', sans-serif;
   --font-content : 'Roboto Condensed', sans-serif;
   /* color*/
+  --darker-grey : #51565d;
   --dark-grey : #6e6e70;
   --middle-grey : #94949c;
   --light-grey : #ededed;
@@ -25,20 +26,4 @@ code {
   --dark-pink : #bc635d;
   --bright-pink : #fe7069;
   --light-pink : #fd897f;
-
-
-  --light-yellow : #f4f7dc;
-  --super-dark-cyan : #003f3f;
-  --dark-cyan : #008b8b;
-  --middle-cyan : #00bebe;
-  --middle-light-cyan : #d2ffff;
-  --light-cyan : #d1ffff;
-  --super-dark-grey : #18191b;
-  --dark-grey : #51565d;
-  --middle-grey: #757c86;
-  --orange : #ffa500;
-  --orange-red : #ff4500;
-  --gold : #ffd700;
-  --light-slate-gray : #778899;
-  --white : #ffffff;
 }
