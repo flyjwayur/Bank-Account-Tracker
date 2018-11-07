@@ -37,8 +37,6 @@ class BankAccount extends Component {
         amount: parseFloat(e.target.value)
       });
     }
-    
-    console.log("type?", e.target.value);
   };
 
   addItems = () => {
@@ -100,14 +98,6 @@ class BankAccount extends Component {
       );
     }
   }
-
-  componentDidUpdate = () => {
-    // console.log("description", this.state.description);
-    // console.log("amount", this.state.amount);
-    // console.log("inputType", this.state.inputType);
-    //console.log("add Income", this.state.incomesList);
-    //console.log("add expense", this.state.expensesList);
-  };
 
   render() {
     return (

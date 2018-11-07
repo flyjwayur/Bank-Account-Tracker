@@ -17,6 +17,7 @@
   box-shadow : 1px 2px 4px var(--middle-grey);
   border-radius : 10px;
   font-size : 1rem;
+  max-width : 60%;
   width : 50%;
   font-family : var(--font-content);
   display: flex;
@@ -28,7 +29,7 @@
 .overViewContent{
   padding: 1rem;
   font-size: 1.2rem;
-  flex : 1;
+  content: 'fit-content';
 }
 
 .minusBalance{
