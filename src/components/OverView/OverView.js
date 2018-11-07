@@ -23,7 +23,6 @@ const OverView = props => {
     return balance;
   };
 
-  console.log(expensesList, incomesList);
   return (
     <Aux>
       <div className={classes.overViewTitle}>Account Balance</div>

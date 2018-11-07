@@ -5,8 +5,6 @@ import classes from './inputFields.module.css'
 const InputFields = props => {
   let {inputType, description, amount, income, expense, handleInput, handleInputSubmit} = props;
 
-  console.log({income} , {amount})
-
   return (
     <form className={classes.input_field} onSubmit={handleInputSubmit}>
       <select value={inputType} className={classes.input_type} onChange={handleInput}>

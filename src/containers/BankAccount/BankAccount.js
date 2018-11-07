@@ -20,8 +20,6 @@ class BankAccount extends Component {
   };
 
   handleInput = e => {
-    console.log("type", e.target.type);
-    console.log("name", e.target.name);
     if (e.target.type === "select-one") {
       this.setState({
         inputType: e.target.value
@@ -81,10 +79,8 @@ class BankAccount extends Component {
     this.addItems();
   };
 
-  handleDeleteItem = (e, arrName, item) => {
-     console.log(arrName);
+  handleDeleteItem = (arrName, item) => {
     if(arrName === "incomesList"){
-      console.log("selected item.id", item.id);
       const newDataList = this.state.incomesList.filter(i => 
         i.id !== item.id
         );
@@ -93,9 +89,7 @@ class BankAccount extends Component {
         "incomesList",
         JSON.stringify(newDataList, undefined, 4)
       );
-      console.log("after delete", newDataList);
     }else if(arrName === "expensesList"){
-      console.log("selected item.id", item.id);
       const newDataList = this.state.expensesList.filter(i => 
         i.id !== item.id
         );
@@ -104,7 +98,6 @@ class BankAccount extends Component {
         "expensesList",
         JSON.stringify(newDataList, undefined, 4)
       );
-      console.log("after delete", newDataList);
     }
   }
 
@@ -138,7 +131,7 @@ class BankAccount extends Component {
         <TrackerDisplay
           expensesList={this.state.expensesList}
           incomesList={this.state.incomesList}
-          handleDeleteItem={(e, arr, item) => (this.handleDeleteItem(e, arr, item))}
+          handleDeleteItem={this.handleDeleteItem}
           icon={faTrash}
         />
       </Aux>

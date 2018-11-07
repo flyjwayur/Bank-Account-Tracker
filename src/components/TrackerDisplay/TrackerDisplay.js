@@ -16,7 +16,7 @@ const TrackerDisplay = props => {
               </span>
               <span className={classes.amount_span}>{amount} {'\u20AC'} </span>
               <span className={classes.date_span}>{date}</span>
-              <button className={[classes.deleteBtn, classes.income_deleteBtn].join(' ')} onClick={(e) => {handleDeleteItem(e,"incomesList", income)}}><FontAwesomeIcon className={classes.deleteFontIcon} icon={icon}/></button>
+              <button className={[classes.deleteBtn, classes.income_deleteBtn].join(' ')} onClick={() => {handleDeleteItem("incomesList", income)}}><FontAwesomeIcon className={classes.deleteFontIcon} icon={icon}/></button>
             </li>
           );
         })
@@ -33,7 +33,7 @@ const TrackerDisplay = props => {
               </span>
               <span className={classes.amount_span}> - {amount} {'\u20AC'}</span>
               <span className={classes.date_span}>{date}</span>
-              <button className={[classes.deleteBtn, classes.expense_deleteBtn].join(' ')} onClick={(e) => {handleDeleteItem(e, "expensesList", expense)}}><FontAwesomeIcon className={classes.deleteFontIcon} icon={icon}/></button>
+              <button className={[classes.deleteBtn, classes.expense_deleteBtn].join(' ')} onClick={() => {handleDeleteItem("expensesList", expense)}}><FontAwesomeIcon className={classes.deleteFontIcon} icon={icon}/></button>
             </li>
           );
         })
