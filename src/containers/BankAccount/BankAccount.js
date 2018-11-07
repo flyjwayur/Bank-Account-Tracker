@@ -72,7 +72,6 @@ class BankAccount extends Component {
 
   handleInputSubmit = e => {
     e.preventDefault();
-    alert("hei " + this.state.inputType + parseFloat(this.state.amount).toFixed(2));
     //Add income or expense according to input type
     this.addItems();
   };
