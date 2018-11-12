@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./trackerDisplay.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { giveCommaEverythreeDigits } from '../../library/methods'
 
 const TrackerDisplay = props => {
   let { expensesList, incomesList, handleDeleteItem, icon} = props;
@@ -14,7 +15,7 @@ const TrackerDisplay = props => {
               <span className={classes.desc_span}>
                 {description.toUpperCase()}
               </span>
-              <span className={classes.amount_span}>{amount} {'\u20AC'} </span>
+              <span className={classes.amount_span}>{giveCommaEverythreeDigits(amount)} {'\u20AC'} </span>
               <span className={classes.date_span}>{date}</span>
               <button className={[classes.deleteBtn, classes.income_deleteBtn].join(' ')} onClick={() => {handleDeleteItem("incomesList", income)}}><FontAwesomeIcon className={classes.deleteFontIcon} icon={icon}/></button>
             </li>
@@ -31,7 +32,7 @@ const TrackerDisplay = props => {
               <span className={classes.desc_span}>
                 {description.toUpperCase()}
               </span>
-              <span className={classes.amount_span}> - {amount} {'\u20AC'}</span>
+              <span className={classes.amount_span}> -{giveCommaEverythreeDigits(amount)} {'\u20AC'}</span>
               <span className={classes.date_span}>{date}</span>
               <button className={[classes.deleteBtn, classes.expense_deleteBtn].join(' ')} onClick={() => {handleDeleteItem("expensesList", expense)}}><FontAwesomeIcon className={classes.deleteFontIcon} icon={icon}/></button>
             </li>

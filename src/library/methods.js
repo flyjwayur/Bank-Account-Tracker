@@ -23,8 +23,8 @@ export const displayDateTime = () => {
   let month = now.getMonth();
   if (month < 10) {
     month = "0" + month + 1;
-  }else{
-    month = month +1;
+  } else {
+    month = month + 1;
   }
   let year = now.getFullYear();
   let hours = now.getHours();
@@ -39,10 +39,31 @@ export const displayDateTime = () => {
 };
 
 export const displayMonth = () => {
-  const namesOfMonth = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"];
- 
+  const namesOfMonth = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
   let now = new Date();
   let month = namesOfMonth[now.getMonth()];
   return `'${month}'`;
-}
+};
+
+export const giveCommaEverythreeDigits = num => {
+  const regex = /(\d)(?=(\d{3})+$)/g;
+  let str = num.toString().split(".");
+  if (str[0].length >= 4) {
+    str[0] = str[0].replace(regex, "$1,");
+  }
+  return str.join('.');
+};
