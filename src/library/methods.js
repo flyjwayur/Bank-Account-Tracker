@@ -36,11 +36,8 @@ export const displayDateTime = () => {
   return `${day}/${month}/${year} ${hours}:${minutes}`;
 };
 
-export const displayMonth = () => {
+export const displayToday = () => {
   let now = new Date();
-  let month = now.toDateString();
-  if (month < 10) {
-    month = "0" + month;
-  }
-  return `${month}`;
+  let today = now.toDateString();
+  return `${today}`;
 };
