@@ -26,7 +26,7 @@ const OverView = props => {
   return (
     <Aux>
       <div className={classes.overViewTitle}>Account Balance</div>
-      <div className={classes.todayIs}>Hel, Today is '{displayMonth()}' :D</div>
+      <div className={classes.todayIs}>Hei HyeSoo, Today is '{displayMonth()}' :D</div>
       <div className={classes.overViewWrapper}>
         <div className={classes.overViewContent}>
           Total balance :{" "}
