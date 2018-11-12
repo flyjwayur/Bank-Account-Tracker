@@ -4,11 +4,15 @@
   color: var(--darker-grey);
 }
 
-.todayIs{
+.currentMonth{
   margin: 1rem auto;
   font-size : 1.2rem;
   font-family : var(--font-content);
   color: var(--dark-blue);
+}
+
+.monthHightlight{
+  font-size: 1.5rem;
 }
 
 .overViewWrapper{

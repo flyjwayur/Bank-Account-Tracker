@@ -22,7 +22,9 @@ export const displayDateTime = () => {
   }
   let month = now.getMonth();
   if (month < 10) {
-    month = "0" + month;
+    month = "0" + month + 1;
+  }else{
+    month = month +1;
   }
   let year = now.getFullYear();
   let hours = now.getHours();
@@ -36,8 +38,11 @@ export const displayDateTime = () => {
   return `${day}/${month}/${year} ${hours}:${minutes}`;
 };
 
-export const displayToday = () => {
+export const displayMonth = () => {
+  const namesOfMonth = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+ 
   let now = new Date();
-  let today = now.toDateString();
-  return `${today}`;
-};
+  let month = namesOfMonth[now.getMonth()];
+  return `'${month}'`;
+}
