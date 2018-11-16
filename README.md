@@ -1,5 +1,5 @@
 # 3rd React project 
-## Budget & expenses tracker 
+## Bank Account Tracker 
 
 Do you want to keep track of your budget and expense? :)
 Here is the application for you! 
