@@ -25,7 +25,7 @@ const OverView = props => {
 
   return (
     <Aux>
-      <div className={classes.overViewTitle}>Budget Tracker</div>
+      <div className={classes.overViewTitle}>Account Tracker</div>
       <div className={classes.currentMonth}>Hei, HyeSoo. It is the account status in <span className={classes.monthHightlight}>{displayMonth()}</span></div>
       <div className={classes.overViewWrapper}>
         <div className={classes.overViewContent}>
