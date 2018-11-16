@@ -24,4 +24,4 @@ Always welcome to listen more ideas/feedbacks
 
 ## 3. Demo
 
-https://budgetexpensetracker.netlify.com
+https://bankaccounttracker.netlify.com/
