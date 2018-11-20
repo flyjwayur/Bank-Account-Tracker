@@ -2,6 +2,7 @@ import React from "react";
 import Aux from "../../hoc/Aux";
 import classes from "./overView.module.css";
 import { displayMonth } from "../../library/methods";
+import { giveCommaEverythreeDigits } from "../../library/methods";
 
 const OverView = props => {
   let { expensesList, incomesList} = props;
@@ -31,20 +32,20 @@ const OverView = props => {
         <div className={classes.overViewContent}>
           Total balance :{" "}
           <span className={(calAccountBalance() < 0)? classes.minusBalance : classes.plusBalance}>
-            {calAccountBalance()} {"\u20AC"}
+            {giveCommaEverythreeDigits(calAccountBalance())} {"\u20AC"}
           </span>
         </div>
         <div className={classes.overViewContent}>
           Total Income :{" "}
           <span className={classes.hightlightIncome}>
             {" "}
-            {calTotalIncome()} {"\u20AC"}{" "}
+            {giveCommaEverythreeDigits(calTotalIncome())} {"\u20AC"}{" "}
           </span>
         </div>
         <div className={classes.overViewContent}>
           Total Expense :{" "}
           <span className={classes.hightlightExpense}>
-            {calTotalExpense()} {"\u20AC"}
+            - {giveCommaEverythreeDigits(calTotalExpense())} {"\u20AC"}
           </span>
         </div>
       </div>
