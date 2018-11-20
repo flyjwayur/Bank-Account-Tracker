@@ -18,6 +18,7 @@ Always welcome to listen more ideas/feedbacks
 
 * Create different components (container and presentational components)
 * Make a minimal set of State
+* Update the array(incomesList,expensesList) in state in a manner of no mutation(concat, filter)
 * Add the data to localstorage and delete the data from it
 * Leave the space for nagivation for the near future
 * Try to make user friendly UI 
