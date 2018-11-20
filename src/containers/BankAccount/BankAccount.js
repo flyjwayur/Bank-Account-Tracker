@@ -46,26 +46,33 @@ class BankAccount extends Component {
     const id = userIdGenerator();
     if (this.state.inputType === "income") {
       const incomesList = this.state.incomesList;
-      incomesList.push({ id, description, amount, date });
+      const newIncomesList = incomesList.concat([
+        { id, description, amount, date }
+      ])
+
       this.setState({
-        incomesList
+        incomesList : newIncomesList
       });
+
       // Save income data to localStorage
       localStorage.setItem(
         "incomesList",
-        JSON.stringify(incomesList, undefined, 4)
+        JSON.stringify(newIncomesList, undefined, 4)
       );
     }
     if (this.state.inputType === "expense") {
       const expensesList = this.state.expensesList;
-      expensesList.push({ id, description, amount, date });
+      const newExpenseList = expensesList.concat([
+        { id, description, amount, date }
+      ])
+
       this.setState({
-        expensesList
+        expensesList : newExpenseList
       });
       // Save expense data to localStorage
       localStorage.setItem(
         "expensesList",
-        JSON.stringify(expensesList, undefined, 4)
+        JSON.stringify(newExpenseList, undefined, 4)
       );
     }
   };
